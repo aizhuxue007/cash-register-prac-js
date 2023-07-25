@@ -48,7 +48,7 @@ function checkCashRegister(price, cash, cid) {
 
   // Calculate price - cash
   changeAmt = (cash - price);
-  // console.log("changeAmt", changeAmt)
+  
 
   // Calculate cidTotal - total $ money in drawer
   cidTotal = cid
@@ -67,14 +67,7 @@ function checkCashRegister(price, cash, cid) {
       let denomName = denom[0];
       let amtFromTill = 0;
       let changeAmtDivideDenom = Math.floor(changeAmt / denomValue);
-      // console.log(
-      //   `denomName: ${denomName}
-      //   denomValue: ${denomValue}
-      //   changeAmt/denom ${changeAmtDivideDenom} 
-      //   change: ${changeAmt} 
-      //   amtInDrawer: ${denomAmtInDrawer} 
-      //   changeList: ${change}`
-      // );
+    
     
       if (changeAmt <= 0) return;
       if (isWholePositiveNumber(changeAmtDivideDenom)) {
@@ -104,4 +97,3 @@ console.log(
   checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])
   )
 
-  // {status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}.
