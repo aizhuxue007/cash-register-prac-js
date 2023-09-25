@@ -7,7 +7,6 @@ function isWholePositiveNumber(value) {
 
 function getDenominationFromTill(denomAmtInDrawer, changeAmtDivideDenom, denomValue) {
   if (denomAmtInDrawer === 0) return 0;
-  // if ()
   const amtToGive = Math.min(denomAmtInDrawer, changeAmtDivideDenom * denomValue);
   return amtToGive;
 }
@@ -23,7 +22,6 @@ function checkCashRegister(price, cash, cid) {
   let change = [],
     changeAmt,
     cidTotal,
-    cidMinusChange,
     denominations;
 
   denominations = {
@@ -49,7 +47,6 @@ function checkCashRegister(price, cash, cid) {
   // Calculate price - cash
   changeAmt = (cash - price);
   
-
   // Calculate cidTotal - total $ money in drawer
   cidTotal = cid
       .reverse()
@@ -61,7 +58,7 @@ function checkCashRegister(price, cash, cid) {
   let totalChangeAmt = changeAmt / 100
 
   if (cidTotal > changeAmt) {
-    cid.forEach((denom) => {
+    cid.forEach((denom) => { 
       let denomValue = denom[2];
       let denomAmtInDrawer = denom[1];
       let denomName = denom[0];
